@@ -5,7 +5,7 @@ Staking
 ========
 
 | Welcome to PCHAIN staking.
-PCHAIN is the 1st native EVM multichain enables the interoperability of child chain and main chain. Making large scale blockchain application possible.
+PCHAIN is the 1st native EVM multichain enabling the interoperability of child chain and main chain. Making large scale blockchain application possible.
 We welcome more PCHAIN community members to run on PCHAIN and jointly make the mainnet stable with PCHAIN innovative PDBFT consensus algorithm, which can greatly reduce communication cost from N^2 to N comparing with traditional BFT algorithm and effectively reduce the centralization problem as the number of nodes is limited. Meanwhile, PCHAIN adopts Dynamic Bidding including voting and revealing vote and it enables the validator election more fair and secure in epoch switch. For the non-technicals, you can delegate PI via Safe Delegation, effectively avoiding the risk of evil by candidates. 
 PCHAIN wallet has been released. It will help you participate in Validator competition more easier and quickly. Meanwhile, PCHAIN staking mechanism is the same on main chain and child chain.
 
@@ -28,12 +28,6 @@ PCHAIN holders with a minimum of 1K PI can delegate PI to candidate(s). Once his
 
 We will introduce how to do those step by step.
 
------------
-Preparation
------------
-
-Currently, you can swap native PI via :ref:`token swap on PIWallet<Token Swap>`.
-
 
 -------------------
 Delegation
@@ -42,9 +36,9 @@ Delegation
 First, we will introduce how to delegate to other candidates, since this is the easiest way to get staking reward and don't request any technical background. All you need to do is
 
 - :ref:`Install PIWallet<PIWallet>`
-- :ref:`Create or import account to PIWallet<Create or import account>`
+- :ref:`Create or import address to PIWallet<Create or import account>`
 - Have at least 1k PI on your address
-- :ref:`Go to delegate <How to delegate>` (You can delegate on both chain or one chain)
+- :ref:`Go to delegate <How to delegate>` (Currently, you can delegate on main chain and child chain1)
 
 Once your candidate succeed in voting for validator, then you will get PoS Mining reward during next Epoch.
 
@@ -52,22 +46,22 @@ Once your candidate succeed in voting for validator, then you will get PoS Minin
 Bidding
 --------------------
 
-Before we introduce how to bid, you must know that become a validator is a very interesting but complex thing. If you do not have any technical background or are new to blockchain, we recommend you to delegate to other candidate(s). Since once you become validator, you have to spend some time to monitor your node and even send your node's log to our team sometimes. But if you are determined to become pchain's validator, we will help you as much as we can.
+Before we introduce how to bid, you must know that becoming a validator is a very interesting but complex thing. If you do not have any technical background or are new to blockchain, we recommend you to delegate to other candidate(s). Since once you become validator, you have to spend some time to monitor your node and even send your node's log to our team sometimes. But if you are determined to become pchain's validator, we will help you as much as we can.
 
 You must have done things below before bidding on any chains:
 
 Stake on main chain:
 
 - :ref:`Installed pchain<Installation>`
-- :ref:`Sync main chain` to the latest height (you can check by `Monitor <http://monitor.pchain.org/>`_)
+- :ref:`Sync and run main chain` to the latest height (you can check by `Monitor <http://monitor.pchain.org/>`_)
 - :ref:`Create Your Account`
 
 Stake on child chain or both chains:
 
 - :ref:`Installed pchain<Installation>`
-- :ref:`Sync main chain` to the latest height (you can check by `Monitor <http://monitor.pchain.org/>`_)
+- :ref:`Sync and run main chain` to the latest height (you can check by `Monitor <http://monitor.pchain.org/>`_)
 - :ref:`Create Your Account`
-- :ref:`Sync child chain` to the latest height (you can check by `Monitor <http://monitor.pchain.org/>`_)
+- :ref:`Sync and run child chain` to the latest height (you can check by `Monitor <http://monitor.pchain.org/>`_)
 
 Now you have 2 options to stake:
 
@@ -76,7 +70,7 @@ Now you have 2 options to stake:
 
 The advantage to apply candidate is you can earn the commission fee from delegators and the delegators' staking will make you more competitive, but once you got delegators, you have the responsibility to keep your node healthy cause the delegators will take attention to their reward.
 
-So we will first introduce how to apply candidates, you can skip this section if you don't wanna apply one.
+So we will then introduce how to apply candidates, you can skip this section if you don't wanna apply one.
 
 >>>>>>>>>>>>>>>>>>>>>>
 How to apply candidate
@@ -88,7 +82,7 @@ After you installed and synced pchain mainnet, you should also have at least 10k
 - :ref:`Apply candidate by RPC<Client Candidate>`
 
 | **Notice:**
-| You can do this on both chain, the RPC URL on main chain and child chain is different:
+| You can apply candidate on both chain, the RPC URL on main chain and child chain is different:
 | Main chain: 	http://yourip:6969/pchain
 | Child chain:	http://yourip:6969/child_0
 
@@ -102,7 +96,7 @@ After you installed and synced pchain mainnet, you should also have at least 100
 - :ref:`Bid for validator by RPC<Client Validator>`
 
 | **Notice:**
-| You can do this on both chain, the RPC URL on main chain and child chain is different:
+| You can bid for validator on both chain, the RPC URL on main chain and child chain is different:
 | Main chain: 	http://yourip:6969/pchain
 | Child chain:	http://yourip:6969/child_0
 
@@ -112,14 +106,14 @@ After you installed and synced pchain mainnet, you should also have at least 100
 Cancel delegation
 -----------------
 
-Once you delegate successfully, you can cancel it before the Epoch reaches 75%. We provide 2 ways to delegation:
+Once you delegate successfully, you can cancel it before the Epoch reaches 75%. We provide 2 ways to cancel delegation:
 
 - :ref:`Cancel delegation by PIWallet<Wallet Cancel Delegation>`
 - :ref:`Cancel delegation by RPC<Client Cancel Delegation>`
 
 1) If your candidate is validator in current Epoch, the cancelation will be effective immediately. Your PI will be automatically unlocked to your balance when the current Epoch reaches 100%.
 
-2) If your candidate is not validator in current Epoch, then the cancelation will take effect immediately and your PI will be automatically unlocked to your balance.
+2) If your candidate is not validator in current Epoch, then the cancelation will take effect immediately and your PI will be automatically unlocked to your balance immediately.
 
 .. _cancelcandidate:
 
@@ -133,7 +127,7 @@ Once you apply candidate successfully, you can cancel it before the Epoch reache
 - :ref:`Cancel candidate by RPC<Client Cancel Candidate>`
 
 | **Notice:**
-| You can do this on both chain, the RPC URL on main chain and child chain is different:
+| You can cancel candidate on both chain, the RPC URL on main chain and child chain is different:
 | Main chain: 	http://yourip:6969/pchain
 | Child chain:	http://yourip:6969/child_0
 
@@ -153,9 +147,9 @@ Description of the various balance below：
 1) balance: total unlocked amount in current Epoch.
 2) delegateBalance:  total amount you delegate to other address(es).
 3) depositBalance:   the staked amount by yourself for Validator bidding.
-4) depositProxiedBalance:  the delegated amount that you staked for Validator bidding.
+4) depositProxiedBalance:  the delegated amount that you received and staked for Validator bidding.
 5) pendingRefundBalance: total pending refund amount which will be return to delegators at the end of Current Epoch.
-6) proxiedBalance:  total delegated amount from other address(es).
+6) proxiedBalance:  total delegated amount you received from other address(es).
 7) rewardBalance:  total pending reward amount, it will be unlocked 1/12 at the end of each Epoch.
 
 For more detail, please check :ref:`What is FullBalance<What is FullBalance>`.
