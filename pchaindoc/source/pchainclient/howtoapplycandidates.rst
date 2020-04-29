@@ -15,7 +15,7 @@ Pchain have 12 epochs per year, and in each epoch there are 4 phases. You can ap
 +------------+--------------------------------------+------------------------------+
 | Phase      | Block Number                         | What you can do              | 
 +============+======================================+==============================+
-| 0% ~ 75%   | start_block ~ vote_start_block - 1   | apply candidates and delegate| 
+| 0% ~ 75%   | start_block ~ vote_start_block - 1   | apply candidates/delegate| 
 +------------+--------------------------------------+------------------------------+
 | 75% ~ 85%  | vote_start_block ~ vote_end_block    | vote                         |
 +------------+--------------------------------------+------------------------------+
@@ -26,11 +26,11 @@ Pchain have 12 epochs per year, and in each epoch there are 4 phases. You can ap
 
 You can check the current stage by our `Monitor <https://monitor.pchain.org>`_, our by RPC `tdm_getEpoch <https://github.com/pchain-org/pchain/wiki/JSON-RPC#tdm_getEpoch>`_.
 
-Now you can prepare the parameters will used later, you should have:
+Now you can prepare the parameters that will be used later, you should have:
 
 - address 
 - security deposit  //amount of the security deposit PI (minimum 10k PI)
-- commission  // the commission fee percentage of each Block Reward be charged from delegator, when Candidate become a Validator (between 0 - 100)
+- commission  // the commission fee percentage of each Block Reward will be charged from delegators when Candidate become a Validator (between 0 - 100)
 
 Note: you can also apply candidates by PIWallet, it will make this process much easier.
 
@@ -52,7 +52,7 @@ Cancel candidates
 >>>>>>>>>>>>>>>>>>>>>
 
 Once you apply candidate successfully, you can cancel it via calling for RPC or PCHAIN wallet before the Epoch reaches 75%.
-1) Canceling your submission after selected to be Validator: your staked PI will be unlocked and all the delegated tokens you received will be automatically returned to each delegator.once the Epoch reaches 100% height.
+1) Canceling your submission after selected to be Validator: your staked PI will be unlocked and all the delegated tokens you received will be automatically returned to each delegator once the Epoch reaches 100% height.
 2) Canceling your submission after you failed being elected Validator: the cancelation will be effective immediately since there are no Validator duties to be completed, your staked PI will be unlocked, and all the delegated tokens you received automatically returned to each delegator balance. 
 
 If you no longer want to be a validator, you can cancel by RPC `del_cancelcandidate <https://github.com/pchain-org/pchain/wiki/JSON-RPC#del_cancelcandidate>`_.
