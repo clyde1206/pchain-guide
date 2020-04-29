@@ -28,7 +28,7 @@ Pchain have 12 epochs per year, and in each epoch there are 4 phases.
 
 You can check the current stage by our `Monitor <https://monitor.pchain.org>`_, or by RPC `tdm_getEpoch <https://github.com/pchain-org/pchain/wiki/JSON-RPC#tdm_getEpoch>`_.
 
-Now you can prepare the parameters will used during vote and reveal vote, you should have:
+Now you can prepare the parameters that will be used to vote and reveal vote, you should have:
 
 - address 
 - consensus public key   //contains in priv_validator.json
@@ -85,14 +85,14 @@ You can vote by `RPC tdm_voteNextEpoch <https://github.com/pchain-org/pchain/wik
 In this case, the command should be:
 ::
 	curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"tdm_voteNextEpoch","params":["0x4CACBCBF218679DCC9574A90A2061BCA4A8D8B6C", "0x4dcb9f6e059051c58cc06ee0c038af4bffc18e85983540a72012bce56d2c37ec"],"id":1}' localhost:6969/pchain
-Remember the return hash and wait for pchain enter reveal vote duration.
+Remember the return hash and wait for pchain to enter reveal vote duration.
 
 Note: you can vote many times during vote phase, the last one will prevail.
 
 >>>>>>>>>>>
 Reveal Vote
 >>>>>>>>>>>
-Before reveal vote, you need to generate a signature signed by your consensus private key. You can generate it by `RPC chain_signAddress <https://github.com/pchain-org/pchain/wiki/JSON-RPC#chain_signAddress>`_. 
+Before revealing vote, you need to generate a signature signed by your consensus private key. You can generate it by `RPC chain_signAddress <https://github.com/pchain-org/pchain/wiki/JSON-RPC#chain_signAddress>`_. 
 ::
 	curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"chain_signAddress","params":["address", "consensus private key"],"id":1}' localhost:6969/pchain
 In this case, the command should be:
@@ -107,12 +107,12 @@ Now you can vote by `RPC tdm_revealvote <https://github.com/pchain-org/pchain/wi
 In this case, the command should be:
 ::
 	curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"tdm_revealVote","params":["0x4CACBCBF218679DCC9574A90A2061BCA4A8D8B6C", "085586D41F70435700850E19B7DE54B3E793C5EC4C6EC502D19030EF4F2122823E5A765E56CBA7B4C57E50561F77B022313C39895CA303F3C95D7B7282412F334778B95ACE046A79AEA4DB148334527250C8895AC5DB80459BF5D367236B59AF2DB5C0254E30A6D8CD1FA10AB8A5D872F5EBD312D3160D3E4DD496973BDC75E0", "0x152d02c7e14af7000000", "ilovepchain", "0x1214608bcdf2e464b2d37d19b1b671482253e275d33079264045253fbb18689385ac0d5b4128d0c593211588deafd9ea2507b4858bdd42aaef3999045c0407ae"],"id":1}' localhost:6969/pchain
-Remember the return hash and wait for pchain enter the last phase.
+Remember the return hash and wait for pchain to enter the last phase.
 
 >>>>>>
 Check
 >>>>>>
-Now you can check if you can become the next epoch's validator by `RPC tdm_getnextepochvalidators <https://github.com/pchain-org/pchain/wiki/JSON-RPC#tdm_getnextepochvalidators>`_.
+Now you can check if you succeed in becoming the next epoch's validator by `RPC tdm_getnextepochvalidators <https://github.com/pchain-org/pchain/wiki/JSON-RPC#tdm_getnextepochvalidators>`_.
 ::
 	curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"tdm_getNextEpochValidators","params":[],"id":1}' localhost:6969/chainid
 In this case, the command should be 
@@ -123,4 +123,4 @@ In this case, the command should be
 How to quit validator
 >>>>>>>>>>>>>>>>>>>>>
 
-If you no longer want to be a validator, you can quit by yourself, the process is the same as above, just set the amount to 0. If you are also a candidate, you should cancel candidate first.
+If you no longer want to be a validator, you can quit by yourself, you need to participate in vote and reveal vote and the process is the same as above, just set the amount to 0. If you are also a candidate, you should cancel candidate first.
