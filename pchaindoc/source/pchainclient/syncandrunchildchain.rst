@@ -4,15 +4,15 @@
 Sync and Run Child Chain
 ========================
 
-Pchain have one child chain now and you can join to mining, the process is same with join the main chain's validators. But at first you need to sync and run child chain.
+PCHAIN have one child chain (child chain 1) now and you can join to mining, the process is the same with joining on main chain. But at first you need to sync and run child chain.
 
-Before you start to sync child chain, make sure you have install pchain and sync main chain.
+Before you start to sync child chain, make sure you have installed pchain and synced main chain.
 
 First, you need to get child chain's `config file <https://github.com/pchain-org/pchain/releases/download/v1.0.01/child_0_config.tar.gz>`_. There are three files in it :
 :: 
 	ubuntu@ip-172-31-12-155:~/child_0_config$ ls
 	eth_genesis.json  genesis.json  run.sh
-The two json file should copy to yourdatadir/.pchain/child_0/, you need to make the directory child_0 yourself.
+The two json files should copy to yourdatadir/.pchain/child_0/, you need to make the directory child_0 yourself.
 ::
 	mkdir -p yourdatadir/.pchain/child_0/
 	cp ~/child_0_config/*.json yourdatadir/.pchain/child_0/
