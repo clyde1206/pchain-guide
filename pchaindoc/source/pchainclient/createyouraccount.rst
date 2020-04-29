@@ -43,7 +43,7 @@ Now please check your datadir's structure:
 			-priv_validator.json  
 			-keystore/          
 
-If you also running child chain and would like to mining on both main chain and child chain, your datadir's structure should look like this:
+If you are also running child chain and would like to mining on both main chain and child chain, your datadir's structure should look like this:
 ::
 	datadir/
 		-chaininfo.db/    
