@@ -36,7 +36,7 @@ The reward you received in each epoch will be unlocked automatically in 12 epoch
 5. How many reward that I may receive in one epoch?
 -----------------------------------------------------------------------------------------------
 The PoS mining reward depends on your PI amount percentage of total staking amount in each epoch. 
-PoS mining reward ≈ Your staking amount/ total staking amount * block reward * the number of epoch blocks
+PoS mining reward ≈ Your staking amount/ total staking amount * block reward * the number of epoch blocks.
 If you are the delegator, then your reward ≈ (1- commission fee(%) ) * Your staking amount/ total staking amount * block reward * the number of epoch blocks
 
 | ** commission fee will be released to the candidate.**
