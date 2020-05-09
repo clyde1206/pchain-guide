@@ -7,6 +7,7 @@ Token Swap
 -------------------------------------------------------------
 
 :ref:`How to do token swap<Token Swap>`
+Noted: The PIwallet token swap has closed on March 31st 2020. 
 
 -------------------------------------------------------------
 2.Password error
