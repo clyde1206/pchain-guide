@@ -46,7 +46,7 @@ No, you can compete validator by yourself. But if you apply candidate, you can g
 5.How many PI should I deposit while vote stage?
 -------------------------------------------------------------
 
-The amount you deposit should be at least 100k PI and equal or larger than total_depositProxiedBalance+total_proxiedBalance.
+The amount you deposit should be at least 100k PI and equal or larger than total_depositProxiedBalance+total_proxiedBalance. Please remember the voting amount and you need to enter the same amount at the revealing vote stage.
 
 -------------------------------------------------------------
 6.How many PI is needed to be elected?
